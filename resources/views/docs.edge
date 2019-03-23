@@ -17,8 +17,16 @@
         <ul class="list-group">
           @each(endpoint in endpoints)
           <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-             {{ endpoint.path }} 
-            <span class="badge badge-primary badge-pill">{{method}}</span>
+            <div>
+              <span>
+               {{ endpoint.path }} 
+             </span>
+            </div>
+            <div>
+              @each(method in endpoint.methods)
+                <span class="badge badge-primary badge-pill">{{method}}</span>
+              @endeach
+            </div>
           </li>
           @endeach
         </ul>
